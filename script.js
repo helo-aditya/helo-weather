@@ -61,7 +61,7 @@ function update(){
 button.addEventListener('click', async ()=>{
     const city = input.value;
     try{
-        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1fd2ba9b626de37ae0fc9653b3b05831&units=metric`);
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.trim()}&appid=1fd2ba9b626de37ae0fc9653b3b05831&units=metric`);
         data = await response.json();
         // console.log(data); //taki get live update hme kya kya api fetch se mil rha hai
             //value of it will be displayed in console of browser
@@ -71,4 +71,5 @@ button.addEventListener('click', async ()=>{
         alert('Invalid City Name!');
         console.log(error);
     }
+
 })
